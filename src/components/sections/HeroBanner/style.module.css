@@ -1,0 +1,15 @@
+.hero-banner {
+    @apply flex items-center justify-center bg-cover bg-center bg-no-repeat h-[600px];
+}
+
+.content {
+    @apply flex flex-col basis-1/3 text-balance;
+}
+
+.title {
+    @apply text-4xl font-bold mb-2;
+}
+
+.subtitle {
+    @apply text-lg mb-8;
+}

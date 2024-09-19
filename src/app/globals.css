@@ -3,16 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(23, 23, 23);
+  --link-color: rgb(14, 165, 233);
+
+  --button-hover: rgba(23, 23, 23, 0.9);
+  --button-secondary-hover: rgba(23, 23, 23, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --button-hover: rgba(237, 237, 237, 0.9);
+    --button-secondary-hover: rgba(237, 237, 237, 0.1);
   }
-}
+} */
 
 body {
   color: var(--foreground);

@@ -1,0 +1,15 @@
+.promo-banner {
+    @apply py-10;
+}
+
+.content {
+    @apply flex items-center justify-between;
+}
+
+.title {
+    @apply text-2xl font-bold mb-2;
+}
+
+.subtitle {
+    @apply mb-8;
+}
