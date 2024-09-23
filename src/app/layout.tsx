@@ -3,7 +3,7 @@ import Footer from '@/components/common/Footer';
 
 import { getSiteSettings } from '@/utils/content';
 
-import "./globals.css";
+import './globals.css';
 
 export async function generateMetadata() {
   const siteSettings = await getSiteSettings();
@@ -26,7 +26,7 @@ export default async function RootLayout({
   const siteSettings = await getSiteSettings();
   const { title, header, footer } = siteSettings;
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <Header {...header} title={title} />
         {children}

@@ -38,35 +38,33 @@ export default function CardsSection(props: CardsSectionProps) {
                         <p className={styles['subtitle']}>{subtitle}</p>
                     )}
                 </div>
-                <div className='flex flex-wrap'>
+                <div className={styles['cards-container']}>
                     {cards && cards.length > 0 && cards.map((card) => {
                         const { title, description, image, link } = card;
 
                         return (
-                            <div className='basis-1/4 mb-4' key={title}>
-                                <Card className='m-2 h-full'>
-                                    {image && (
-                                        <div className='relative w-full aspect-[16/9]'>
-                                            <NextImage
-                                                alt={image.alt || title}
-                                                src={image.url}
-                                                fill
-                                                className='object-cover'
-                                                sizes='(max-width: 640px) 100vw, 640px'
-                                            />
-                                        </div>
+                            <Card key={title}>
+                                {image && (
+                                    <div className='relative w-full aspect-[16/9]'>
+                                        <NextImage
+                                            alt={image.alt || title}
+                                            src={image.url}
+                                            fill
+                                            className='object-cover'
+                                            sizes='(max-width: 640px) 100vw, 640px'
+                                        />
+                                    </div>
+                                )}
+                                <CardContent className='p-4'>
+                                    <h2 className='text-2xl font-bold mb-2'>{title}</h2>
+                                    {description && (
+                                        <p className='text-muted-foreground'>
+                                            {description}
+                                        </p>
                                     )}
-                                    <CardContent className='p-4 pb-0'>
-                                        <h2 className='text-2xl font-bold mb-2'>{title}</h2>
-                                        {description && (
-                                            <p className='text-muted-foreground'>
-                                                {description}
-                                            </p>
-                                        )}
-                                        <Link className='mt-4' href={link.url} variant='outline'>{link.title}</Link>
-                                    </CardContent>
-                                </Card>
-                            </div>
+                                    <Link className='mt-4' href={link.url} variant='outline'>{link.title}</Link>
+                                </CardContent>
+                            </Card>
                         )
                     })}
                 </div>

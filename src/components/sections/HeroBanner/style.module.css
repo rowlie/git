@@ -13,3 +13,7 @@
 .subtitle {
     @apply text-lg mb-8;
 }
+
+.cta-container {
+    @apply flex gap-2;
+}

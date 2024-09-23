@@ -6,6 +6,7 @@ import { type PromoBanner } from '@/components/sections/PromoBanner';
 import { type MarkdownSection } from '@/components/sections/Markdown';
 import { type FaqSection } from '@/components/sections/Faq';
 import { type CardsSection } from '@/components/sections/Cards';
+import { type TestimonialsSection } from '@/components/sections/Testimonials';
 
 export interface Link {
     title: string;
@@ -16,6 +17,12 @@ export interface Link {
 export interface Image {
     url: string;
     alt?: string;
+}
+
+export interface Author {
+    name: string;
+    title?: string;
+    image?: Image;
 }
 
 export interface SiteSettings {
@@ -30,4 +37,4 @@ export interface PageCommonProps {
     slug: string;
 }
 
-export type Section = HeroBanner | PromoBanner | MarkdownSection | FaqSection | CardsSection;
+export type Section = HeroBanner | PromoBanner | MarkdownSection | FaqSection | CardsSection | TestimonialsSection;

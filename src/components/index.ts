@@ -6,6 +6,7 @@ import PromoBanner from './sections/PromoBanner';
 import MarkdownSection from './sections/Markdown';
 import FaqSection from './sections/Faq';
 import CardsSection from './sections/Cards';
+import TestimonialsSection from './sections/Testimonials';
 
 const pageLayoutMapping: Record<string, any> = {
     'sections-page': SectionsPageLayout,
@@ -18,6 +19,7 @@ const sectionsMapping: Record<string, any> = {
     'markdown': MarkdownSection,
     'faq-section': FaqSection,
     'cards-section': CardsSection,
+    'testimonials': TestimonialsSection,
 };
 
 export function getComponentBySectionType(type: string) {

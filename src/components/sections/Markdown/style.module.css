@@ -8,7 +8,7 @@
 .content h4 {
     font-style: normal;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: var(--primary);
     margin: 0.83em 0;
 }
 
@@ -40,21 +40,21 @@
 }
 
 .content li {
+    color: var(--muted-foreground);
     font-size: 16px;
     line-height: 22px;
     letter-spacing: -0.08px;
     font-style: normal;
     font-weight: 400;
-    color: rgb(85, 85, 85);
 }
 
 .content > :not(li) > p {
+    color: var(--muted-foreground);
     font-size: 16px;
     line-height: 22px;
     letter-spacing: -0.08px;
     font-style: normal;
     font-weight: 400;
-    color: rgb(85, 85, 85);
     margin: 1em 0;
 }
 
@@ -64,7 +64,6 @@
     letter-spacing: -0.08px;
     font-style: normal;
     font-weight: bold;
-    color: rgb(0, 0, 0);
 }
 
 .content a {
@@ -74,14 +73,14 @@
 
 .content blockquote {
     padding: 30px 0px 40px;
-    border-top: 2px solid rgb(196, 196, 196);
-    border-bottom: 2px solid rgb(196, 196, 196);
+    border-top: 2px solid var(--accent-foreground);
+    border-bottom: 2px solid var(--accent-foreground);
     font-size: 24px;
     line-height: 28px;
     letter-spacing: -0.08px;
     font-style: normal;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    
     font-style: italic;
     text-align: center;
 }

@@ -22,7 +22,7 @@ export interface FaqSectionProps {
 }
 
 export interface FaqSection extends FaqSectionProps {
-    type: 'faq-section'
+    type: 'faq-section';
 };
 
 const FaqSection = (props: FaqSectionProps) => {

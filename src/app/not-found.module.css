@@ -1,0 +1,7 @@
+.title {
+    @apply text-6xl font-bold;
+}
+
+.message {
+    @apply text-2xl text-muted-foreground mb-8;
+}

@@ -1,0 +1,15 @@
+.testimonials-section {
+    @apply py-10;
+}
+
+.title {
+    @apply text-2xl font-bold mb-2;
+}
+
+.subtitle {
+    @apply mb-8 text-muted-foreground;
+}
+
+.testimonials-container {
+    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+}

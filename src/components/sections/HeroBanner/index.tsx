@@ -14,7 +14,7 @@ export interface HeroBannerProps {
 }
 
 export interface HeroBanner extends HeroBannerProps {
-    type: 'hero-banner'
+    type: 'hero-banner';
 }
 
 const HeroBanner = (props: HeroBannerProps) => {

@@ -9,3 +9,7 @@
 .subtitle {
     @apply mb-8 text-muted-foreground;;
 }
+
+.cards-container {
+    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}

@@ -12,7 +12,14 @@ const blogPosts: BlogPostLayoutProps[] = [
         image: {
             url: 'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-AI-7Ed-Sapphire-MC001-3000x1682:VP5-1920x600',
             alt: 'Surface Laptop'
-        }
+        },
+        author: [{
+            name: 'Arseny Gurevich'
+        }, {
+            name: 'Joe Keyes'
+        }, {
+            name: 'Snoop Dogg'
+        }]
     }
 ];
 
@@ -94,6 +101,29 @@ const pages: SectionsPageLayoutProps[] = [
                 question: 'Do you offer gift cards?',
                 answer: 'Yes, we offer gift cards. Please contact customer service for more information.'
             }]
+        }, {
+            type: 'testimonials',
+            title: 'Testimonials',
+            subtitle: 'What our customers say',
+            testimonials: [{
+                author: {
+                    name: 'Master Splinter',
+                    title: 'CEO, TMNT',
+                    image: {
+                        url: 'https://cdn.archonia.com/images/1-80716403-1-1-original1/teenage-mutant-ninja-turtles-reaction-action-figure-splinter.jpg'
+                    }
+                },
+                quote: 'It\'s the best thing since sliced bread!'
+            }, {
+                author: {
+                    name: 'Donatello',
+                    title: 'Bō Master, TMNT',
+                    image: {
+                        url: 'https://static.miraheze.org/greatcharacterswiki/f/fc/ImageDonatelloSeasons1-5.png'
+                    }
+                },
+                quote: 'I can\'t imagine my life without that Pizza Oven!' 
+            }]
         }]
     }, {
         _id: '123',
@@ -121,11 +151,9 @@ const pages: SectionsPageLayoutProps[] = [
             className: 'text-white',
         }]
     },
-]
+];
 
-export function getSiteSettings(): SiteSettings {
-    const siteName = 'ACME';
-
+function generateSiteSettings(siteName: string): SiteSettings {
     return {
         title: siteName,
         header: {
@@ -143,6 +171,12 @@ export function getSiteSettings(): SiteSettings {
             copyrightText: 'Copyright © Netlify 2024.'
         },
     }
+}
+
+export function getSiteSettings(): SiteSettings {
+    const siteName = 'ACME';
+
+    return generateSiteSettings(siteName);
 }
 
 export function getPageBySlug(type: string, slug: string): SectionsPageLayoutProps | BlogPostLayoutProps | null {

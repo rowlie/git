@@ -10,7 +10,7 @@ export interface MarkdownSectionProps {
 }
 
 export interface MarkdownSection extends MarkdownSectionProps {
-    type: 'markdown'
+    type: 'markdown';
 }
 
 import styles from './style.module.css';

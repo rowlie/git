@@ -18,7 +18,7 @@ const Link = (props: LinkProps) => {
 
     return (
         <Button asChild variant={variant}>
-            <NextLink href={href} className={`${className}`} {...AnnotationsHelper.setFieldPath(fieldPath)}>
+            <NextLink href={href} className={className} {...AnnotationsHelper.setFieldPath(fieldPath)}>
                 {children}
             </NextLink>
         </Button>
