@@ -1,13 +1,11 @@
 import { notFound } from 'next/navigation';
-import { getLayoutByPageType } from '@/components/';
+import { getLayoutByPageType, SECTIONS_PAGE } from '@/components/';
 import { getPageBySlug } from '@/utils/content';
 
-const pageLayout = 'sections-page';
-
 export default async function Home() {
-  const Layout = getLayoutByPageType(pageLayout);
+  const Layout = getLayoutByPageType(SECTIONS_PAGE);
 
-  const page = await getPageBySlug(pageLayout, '/');
+  const page = await getPageBySlug(SECTIONS_PAGE, '/');
 
   if (!page) {
     return notFound();

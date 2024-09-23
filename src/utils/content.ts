@@ -1,5 +1,5 @@
-import { BlogPostLayoutProps } from '@/components/layouts/BlogPostLayout';
-import { getPageBySlug as getPage, getSiteSettings as getSite, getPagesByType as getPages } from '@/utils/test-content-source';
+import { BLOG_POST } from '@/components';
+import { getPageBySlug as getPage, getSiteSettings as getSite, getPagesByType } from '@/utils/test-content-source';
 
 export async function getPageBySlug(type: string, slug: string) {
     return getPage(type, slug);
@@ -10,5 +10,5 @@ export async function getSiteSettings() {
 }
 
 export async function getBlogPosts() {
-    return getPages('blog-post');
+    return getPagesByType(BLOG_POST);
 }

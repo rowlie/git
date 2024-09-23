@@ -25,7 +25,7 @@ const blogPosts: BlogPostLayoutProps[] = [
 
 const pages: SectionsPageLayoutProps[] = [
     {
-        _id: '123',
+        _id: 'homepage',
         slug: '/',
         title: 'Home',
         sections: [{
@@ -126,7 +126,7 @@ const pages: SectionsPageLayoutProps[] = [
             }]
         }]
     }, {
-        _id: '123',
+        _id: 'about-page',
         slug: '/about',
         title: 'About',
         sections: [{
@@ -148,7 +148,6 @@ const pages: SectionsPageLayoutProps[] = [
             image: {
                 url: 'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP5-1596x600'
             },
-            className: 'text-white',
         }]
     },
 ];
