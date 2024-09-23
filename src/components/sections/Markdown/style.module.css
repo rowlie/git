@@ -1,3 +1,7 @@
+.content {
+    @apply py-10;
+}
+
 .content h1,
 .content h2,
 .content h3,

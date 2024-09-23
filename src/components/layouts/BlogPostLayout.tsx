@@ -1,20 +1,21 @@
-import Markdown from 'markdown-to-jsx';
 import NextImage from 'next/image';
 import Container from "@/components/common/Container";
-// import Link from "@/components/common/Link";
-import * as AnnotationsHelper from "@/utils/annotations";
+
+import * as AnnotationsHelper from "@/lib/annotations";
 import MarkdownSection from '@/components/sections/Markdown';
 import { type Image, PageCommonProps } from '@/components/common/types';
 
 import styles from './blog-post.module.css';
 
-export type BlogPageLayoutProps = PageCommonProps & {
+export type BlogPostLayoutProps = PageCommonProps & {
+    excerpt?: string;
     image?: Image;
     content: string;
 }
 
-export default function BlogPageLayout(props: BlogPageLayoutProps) {
+export default function BlogPageLayout(props: BlogPostLayoutProps) {
     const { title, content, _id, image } = props;
+
     return (
         <Container className='flex flex-col' {...AnnotationsHelper.setObjectId(_id)}>
             {image && (

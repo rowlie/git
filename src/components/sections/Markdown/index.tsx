@@ -2,14 +2,16 @@ import Markdown from "markdown-to-jsx";
 import Link from "@/components/common/Link";
 import Container from '@/components/common/Container';
 
-import * as AnnotationsHelper from "@/utils/annotations";
+import * as AnnotationsHelper from "@/lib/annotations";
 
 export interface MarkdownSectionProps {
     className?: string;
     content: string;
 }
 
-export type MarkdownSection = MarkdownSectionProps & { type: 'markdown'; }
+export interface MarkdownSection extends MarkdownSectionProps {
+    type: 'markdown'
+}
 
 import styles from './style.module.css';
 
@@ -24,7 +26,7 @@ export default function MarkdownSection(props: MarkdownSectionProps) {
                 options={{
                     overrides: {
                         a: ({ children, ...props }) => {
-                            return <Link href={props.href} variant='none'>{children}</Link>;
+                            return <Link href={props.href} variant='link'>{children}</Link>;
                         },
                     }
                 }}

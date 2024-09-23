@@ -3,7 +3,7 @@ import { getLayoutByPageType } from '@/components/';
 import { getPageBySlug } from '@/utils/content';
 import { Metadata } from 'next';
 
-const pageLayout = 'blog-page';
+const pageLayout = 'blog-post';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params;

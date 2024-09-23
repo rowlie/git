@@ -1,6 +1,7 @@
+import NextLink from 'next/link';
 import Image from 'next/image';
-import Container from '@/components/common/Container';
 import Link from '@/components/common/Link';
+import Container from '@/components/common/Container';
 
 import { type Link as LinkType } from '../types';
 
@@ -20,13 +21,13 @@ const Header = (props: HeaderProps) => {
     return (
         <header className={styles['header']}>
             <Container className={styles['content']}>
-                <Link href='/' variant='none'>
+                <NextLink href='/'>
                     <Image src={Logo} alt={title} width={logoWidth} />
-                </Link>
+                </NextLink>
                 {links && links.length > 0 && (
                     <div className={styles['links']}>
                         {links.map((link) => {
-                            const { url, title, variant = 'header-link' } = link;
+                            const { url, title, variant = 'link' } = link;
 
                             return (
                                 <Link key={url} href={url} variant={variant}>

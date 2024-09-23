@@ -3,7 +3,7 @@
 }
 
 .content {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between gap-8;
 }
 
 .title {
@@ -11,5 +11,5 @@
 }
 
 .subtitle {
-    @apply mb-8;
+    @apply text-muted-foreground;
 }

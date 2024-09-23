@@ -6,7 +6,7 @@ export default function NotFoundPage() {
         <Container className='flex flex-col h-96 justify-center items-center'>
             <h1>404</h1>
             <p>Page not found!</p>
-            <Link href='/'>
+            <Link href='/' variant='default'>
                 Go back to home
             </Link>
         </Container>

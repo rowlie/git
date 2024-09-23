@@ -1,5 +1,5 @@
 import Container from '@/components/common/Container';
-import * as AnnotationsHelper from '@/utils/annotations';
+import * as AnnotationsHelper from "@/lib/annotations";
 import styles from './style.module.css';
 
 import type { Image, Link } from '@/components/common/types';
@@ -13,7 +13,9 @@ export interface HeroBannerProps {
     cta?: Link[];
 }
 
-export type HeroBanner = HeroBannerProps & { type: 'hero-banner'; }
+export interface HeroBanner extends HeroBannerProps {
+    type: 'hero-banner'
+}
 
 const HeroBanner = (props: HeroBannerProps) => {
     const { className = '', title, subtitle, image, cta } = props;

@@ -1,5 +1,5 @@
 import { getComponentBySectionType } from "@/components/"
-import * as AnnotationsHelper from "@/utils/annotations";
+import * as AnnotationsHelper from "@/lib/annotations";
 
 import { type Section, PageCommonProps } from '@/components/common/types';
 

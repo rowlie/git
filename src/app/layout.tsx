@@ -27,8 +27,7 @@ export default async function RootLayout({
   const { title, header, footer } = siteSettings;
   return (
     <html lang="en">
-      <body
-      >
+      <body>
         <Header {...header} title={title} />
         {children}
         <Footer {...footer} />

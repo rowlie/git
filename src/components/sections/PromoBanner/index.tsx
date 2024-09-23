@@ -1,6 +1,6 @@
 import Container from '@/components/common/Container';
 import LinkElement from '@/components/common/Link';
-import * as AnnotationsHelper from '@/utils/annotations';
+import * as AnnotationsHelper from "@/lib/annotations";
 import styles from './style.module.css';
 
 import type { Image, Link } from '@/components/common/types';
@@ -13,7 +13,9 @@ export interface PromoBannerProps {
     cta?: Link[];
 }
 
-export type PromoBanner = PromoBannerProps & { type: 'promo-banner'; }
+export interface PromoBanner extends PromoBannerProps {
+    type: 'promo-banner'
+}
 
 const PromoBanner = (props: PromoBannerProps) => {
     const { className = '', title, subtitle, image, cta } = props;
