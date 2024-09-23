@@ -1,9 +1,10 @@
 import Container from '@/components/common/Container';
+import LinkElement from '@/components/common/Link';
 import * as AnnotationsHelper from "@/lib/annotations";
+
 import styles from './style.module.css';
 
 import type { Image, Link } from '@/components/common/types';
-import LinkElement from '@/components/common/Link';
 
 export interface HeroSectionProps {
     title: string;

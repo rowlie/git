@@ -31,8 +31,15 @@
                     "url": "/",
                     "variant": "default",
                     "title": "Download Copilot App"
+                },
+                {
+                    "type": "Link",
+                    "title": "Read more",
+                    "url": "#",
+                    "variant": "link"
                 }
-            ]
+            ],
+            "className": ""
         },
         {
             "type": "cards-section",

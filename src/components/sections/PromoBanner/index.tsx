@@ -4,7 +4,7 @@ import * as AnnotationsHelper from '@/lib/annotations';
 
 import styles from './style.module.css';
 
-import type { Image, Link } from '@/components/common/types';
+import type { Link } from '@/components/common/types';
 
 export interface PromoBannerProps {
     title: string;

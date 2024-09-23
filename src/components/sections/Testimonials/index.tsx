@@ -1,13 +1,11 @@
 import Container from '@/components/common/Container';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
-
 import * as AnnotationsHelper from '@/lib/annotations';
 
 import styles from './style.module.css';
 
 import type { Author } from '@/components/common/types';
-import test from 'node:test';
 
 export interface Testimonial {
     quote: string;

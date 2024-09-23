@@ -37,6 +37,7 @@ export const TestimonialsSection: ObjectModel = {
                         name: 'author',
                         label: 'Author',
                         models: ['Author'],
+                        required: true,
                     }
                 ]
             },

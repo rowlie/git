@@ -33,5 +33,3 @@ export const SectionsPage: PageModel = {
     }],
     hideContent: true,
 }
-
-/// 'Features Section', 'Pricing Section', 'Testimonials Section', 'CTA Section'

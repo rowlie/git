@@ -34,27 +34,31 @@ export default function CardsSection(props: CardsSectionProps) {
         <section className={styles['cards-section']} {...AnnotationsHelper.setFieldPath(fieldPath)}>
             <Container>
                 <div>
-                    <h2
-                        className={styles['title']}
-                        {...AnnotationsHelper.setFieldPath('.title')}
-                    >
-                        {title}
-                    </h2>
-                    <p
-                        className={styles['subtitle']}
-                        {...AnnotationsHelper.setFieldPath('.subtitle')}
-                    >
-                        {subtitle}
-                    </p>
+                    {title && (
+                        <h2
+                            className={styles['title']}
+                            {...AnnotationsHelper.setFieldPath('.title')}
+                        >
+                            {title}
+                        </h2>
+                    )}
+                    {subtitle && (
+                        <p
+                            className={styles['subtitle']}
+                            {...AnnotationsHelper.setFieldPath('.subtitle')}
+                        >
+                            {subtitle}
+                        </p>
+                    )}
                 </div>
                 <div className={styles['cards-container']}>
                     {cards && cards.length > 0 && cards.map((card, index) => {
                         const { title, description, image, link } = card;
 
                         return (
-                            <Card key={title} {...AnnotationsHelper.setFieldPath(`.cards.${index}`)}>
+                            <Card key={title} {...AnnotationsHelper.setFieldPath(fieldPath && `.cards.${index}`)}>
                                 {image && (
-                                    <div className='relative w-full aspect-[16/9]' {...AnnotationsHelper.setFieldPath('.image.url')}>
+                                    <div className='relative w-full aspect-[16/9]' {...AnnotationsHelper.setFieldPath(fieldPath && '.image.url')}>
                                         <NextImage
                                             alt={image.alt || title}
                                             src={image.url}
@@ -65,14 +69,14 @@ export default function CardsSection(props: CardsSectionProps) {
                                     </div>
                                 )}
                                 <CardContent className='p-4'>
-                                    <h2 className='text-2xl font-bold mb-2' {...AnnotationsHelper.setFieldPath('.title')}>{title}</h2>
+                                    <h2 className='text-2xl font-bold mb-2' {...AnnotationsHelper.setFieldPath(fieldPath && '.title')}>{title}</h2>
                                     {description && (
-                                        <p className='text-muted-foreground' {...AnnotationsHelper.setFieldPath('.description')}>
+                                        <p className='text-muted-foreground' {...AnnotationsHelper.setFieldPath(fieldPath && '.description')}>
                                             {description}
                                         </p>
                                     )}
                                     {link && (
-                                        <Link className='mt-4' href={link.url} variant={link.variant || 'outline'} {...AnnotationsHelper.setFieldPath('.link')}>{link.title}</Link>
+                                        <Link className='mt-4' href={link.url} variant={link.variant || 'outline'} {...AnnotationsHelper.setFieldPath(fieldPath && '.link')}>{link.title}</Link>
                                     )}
                                 </CardContent>
                             </Card>

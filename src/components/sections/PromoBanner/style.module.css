@@ -13,3 +13,7 @@
 .subtitle {
     @apply text-muted-foreground;
 }
+
+.cta-container {
+    @apply flex gap-2;
+}
