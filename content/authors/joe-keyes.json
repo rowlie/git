@@ -1,0 +1,9 @@
+{
+    "type": "Author",
+    "name": "Joe Keyes",
+    "title": "Senior Manager, Solutions Engineering @ Netlify",
+    "image": {
+        "type": "Image",
+        "url": "/images/joe.jpeg"
+    }
+}

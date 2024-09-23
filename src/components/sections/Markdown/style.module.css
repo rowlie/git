@@ -29,14 +29,22 @@
     margin: 1em 0;
 }
 
-.content ul {
+.content ul,
+.content ol {
     display: block;
-    list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
+}
+
+.content ol {
+    list-style-type: decimal;
+}
+
+.content ul {
+    list-style-type: disc;
 }
 
 .content li {

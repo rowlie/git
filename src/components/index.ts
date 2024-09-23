@@ -1,7 +1,7 @@
 import SectionsPageLayout from './layouts/SectionsPageLayout';
 import BlogPageLayout from './layouts/BlogPostLayout';
 
-import HeroBanner from './sections/HeroBanner';
+import HeroSection from './sections/HeroSection';
 import PromoBanner from './sections/PromoBanner';
 import MarkdownSection from './sections/Markdown';
 import FaqSection from './sections/Faq';
@@ -17,7 +17,7 @@ const pageLayoutMapping: Record<string, any> = {
 }
 
 const sectionsMapping: Record<string, any> = {
-    'hero-banner': HeroBanner,
+    'hero-section': HeroSection,
     'promo-banner': PromoBanner,
     'markdown': MarkdownSection,
     'faq-section': FaqSection,

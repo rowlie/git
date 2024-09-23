@@ -1,0 +1,9 @@
+{
+    "type": "Author",
+    "name": "Arseny Gurevich",
+    "title": "Senior Solutions Engineer @ Netlify",
+    "image": {
+        "type": "Image",
+        "url": "/images/arseny.jpeg"
+    }
+}

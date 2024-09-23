@@ -7,6 +7,7 @@ import * as AnnotationsHelper from '@/lib/annotations';
 import styles from './style.module.css';
 
 import type { Author } from '@/components/common/types';
+import test from 'node:test';
 
 export interface Testimonial {
     quote: string;
@@ -31,26 +32,38 @@ const TestimonialsSection = (props: TestimonialsSectionProps) => {
     return (
         <section className={`${styles['testimonials-section']} ${className}`} {...AnnotationsHelper.setFieldPath(fieldPath)}>
             <Container className={styles['content']}>
-                <h2 className={styles['title']}>{title}</h2>
-                <p className={styles['subtitle']}>{subtitle}</p>
+                <h2
+                    className={styles['title']}
+                    {...AnnotationsHelper.setFieldPath('.title')}
+                >
+                    {title}
+                </h2>
+                <p
+                    className={styles['subtitle']}
+                    {...AnnotationsHelper.setFieldPath('.subtitle')}
+                >
+                    {subtitle}
+                </p>
                 {testimonials && testimonials.length > 0 && (
                     <div className={styles['testimonials-container']}>
                         {testimonials.map((testimonial, index) => (
-                            <Card key={index} className='bg-card'>
+                            <Card key={index} className='bg-card' {...AnnotationsHelper.setFieldPath(`.testimonials.${index}`)}>
                                 <CardContent className='p-6'>
-                                    <blockquote className='text-lg mb-4'>'{testimonial.quote}'</blockquote>
-                                    <div className='flex items-center'>
-                                        <Avatar className='h-12 w-12 mr-4'>
-                                            <AvatarImage src={testimonial.author.image?.url} alt={testimonial.author.name} />
-                                            <AvatarFallback>{testimonial.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                        </Avatar>
-                                        <div>
-                                            <cite className='font-semibold not-italic'>{testimonial.author.name}</cite>
-                                            {testimonial.author.title && (
-                                                <p className='text-sm text-muted-foreground'>{testimonial.author.title}</p>
-                                            )}
+                                    <blockquote className='text-lg mb-4' {...AnnotationsHelper.setFieldPath('.quote')}>'{testimonial.quote}'</blockquote>
+                                    {testimonial.author && (
+                                        <div className='flex items-center'>
+                                            <Avatar className='h-12 w-12 mr-4' {...AnnotationsHelper.setFieldPath('.author')}>
+                                                <AvatarImage src={testimonial.author.image?.url} alt={testimonial.author.name} />
+                                                <AvatarFallback>{testimonial.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                                            </Avatar>
+                                            <div {...AnnotationsHelper.setFieldPath('.author')}>
+                                                <cite className='font-semibold not-italic'>{testimonial.author.name}</cite>
+                                                {testimonial.author.title && (
+                                                    <p className='text-sm text-muted-foreground'>{testimonial.author.title}</p>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </CardContent>
                             </Card>
                         ))}

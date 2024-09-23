@@ -1,0 +1,31 @@
+{
+    "type": "sections-page",
+    "slug": "/about",
+    "title": "About",
+    "sections": [
+        {
+            "type": "hero-section",
+            "title": "Lernen Sie Surface Laptop kennen",
+            "subtitle": "Nutzen Sie mit diesem außergewöhnlich leistungsstarken Notebook KI-Funktionen wie Live Captions und Cocreator.",
+            "image": {
+                "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-AI-7Ed-Sapphire-MC001-3000x1682:VP5-1920x600"
+            },
+            "cta": [
+                {
+                    "title": "Buy now",
+                    "url": "/about",
+                    "variant": "default"
+                }
+            ]
+        },
+        {
+            "type": "hero-section",
+            "title": "Game Pass",
+            "subtitle": "Spiele neue Titel am ersten Tag. Und spiele mit anderen Gamern Hunderte großartiger Spiele auf Konsole und PC.",
+            "image": {
+                "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP5-1596x600"
+            },
+            "className": ""
+        }
+    ]
+}

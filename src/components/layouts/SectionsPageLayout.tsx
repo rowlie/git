@@ -8,7 +8,8 @@ export type SectionsPageLayoutProps = PageCommonProps & {
 }
 
 export default function SectionsPageLayout(props: SectionsPageLayoutProps) {
-    const { sections, _id } = props;
+    const { sections = [], _id } = props;
+
     return (
         <div className="flex flex-col" {...AnnotationsHelper.setObjectId(_id)}>
             {sections.map((section, index) => {

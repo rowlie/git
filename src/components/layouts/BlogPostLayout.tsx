@@ -8,14 +8,14 @@ import { type Image, PageCommonProps, Author } from '@/components/common/types';
 import styles from './blog-post.module.css';
 
 export type BlogPostLayoutProps = PageCommonProps & {
-    author?: Author[];
+    authors?: Author[];
     excerpt?: string;
     image?: Image;
     content: string;
 }
 
 export default function BlogPageLayout(props: BlogPostLayoutProps) {
-    const { title, content, _id, image, author } = props;
+    const { title, content, _id, image, authors } = props;
 
     return (
         <Container className='flex flex-col' {...AnnotationsHelper.setObjectId(_id)}>
@@ -31,9 +31,14 @@ export default function BlogPageLayout(props: BlogPostLayoutProps) {
                 </div>
             )}
             <div className={styles['post-container']}>
-                <h1 className={styles['title']}>{title}</h1>
-                {author && author.length > 0 && (
-                    <p>Written by {author.map((a) => a.name).map((name) => (<span className={styles['author']} key={name}>{name}</span>))}</p>
+                <h1
+                    className={styles['title']}
+                    {...AnnotationsHelper.setFieldPath('.title')}
+                >
+                    {title}
+                </h1>
+                {authors && authors.length > 0 && (
+                    <p>Written by {authors.map((a) => a.name).map((name) => (<span className={styles['author']} key={name}>{name}</span>))}</p>
                 )}
                 <MarkdownSection
                     {...AnnotationsHelper.setFieldPath('.content')}

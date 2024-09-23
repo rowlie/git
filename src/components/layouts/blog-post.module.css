@@ -23,7 +23,7 @@
     content: ', ';
 }
 
-.author:last-of-type:before {
+.author:not(:first-child):last-of-type:before {
     content: ' & ';
 }
 

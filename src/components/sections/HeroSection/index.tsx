@@ -5,7 +5,7 @@ import styles from './style.module.css';
 import type { Image, Link } from '@/components/common/types';
 import LinkElement from '@/components/common/Link';
 
-export interface HeroBannerProps {
+export interface HeroSectionProps {
     title: string;
     subtitle: string;
     image?: Image;
@@ -13,11 +13,11 @@ export interface HeroBannerProps {
     cta?: Link[];
 }
 
-export interface HeroBanner extends HeroBannerProps {
-    type: 'hero-banner';
+export interface HeroSection extends HeroSectionProps {
+    type: 'hero-section';
 }
 
-const HeroBanner = (props: HeroBannerProps) => {
+const HeroSection = (props: HeroSectionProps) => {
     const { className = '', title, subtitle, image, cta } = props;
     const fieldPath = AnnotationsHelper.getFieldPath(props);
 
@@ -31,8 +31,18 @@ const HeroBanner = (props: HeroBannerProps) => {
         >
             <Container className='flex'>
                 <div className={styles['content']}>
-                    <h2 className={styles['title']}>{title}</h2>
-                    <p className={styles['subtitle']}>{subtitle}</p>
+                    <h2
+                        className={styles['title']}
+                        {...AnnotationsHelper.setFieldPath('.title')}
+                    >
+                        {title}
+                    </h2>
+                    <p
+                        className={styles['subtitle']}
+                        {...AnnotationsHelper.setFieldPath('.subtitle')}
+                    >
+                        {subtitle}
+                    </p>
                     {cta && cta.length > 0 && (
                         <div className={styles['cta-container']}>
                             {cta.map((ctaItem, index) => (
@@ -48,4 +58,4 @@ const HeroBanner = (props: HeroBannerProps) => {
     );
 }
 
-export default HeroBanner;
+export default HeroSection;

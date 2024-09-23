@@ -1,7 +1,7 @@
 import { type HeaderProps } from '@/components/common/Header';
 import { type FooterProps } from '@/components/common/Footer';
 
-import { type HeroBanner } from '@/components/sections/HeroBanner';
+import { type HeroSection } from '@/components/sections/HeroSection';
 import { type PromoBanner } from '@/components/sections/PromoBanner';
 import { type MarkdownSection } from '@/components/sections/Markdown';
 import { type FaqSection } from '@/components/sections/Faq';
@@ -37,4 +37,4 @@ export interface PageCommonProps {
     slug: string;
 }
 
-export type Section = HeroBanner | PromoBanner | MarkdownSection | FaqSection | CardsSection | TestimonialsSection;
+export type Section = HeroSection | PromoBanner | MarkdownSection | FaqSection | CardsSection | TestimonialsSection;

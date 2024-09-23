@@ -9,7 +9,6 @@ import type { Image, Link } from '@/components/common/types';
 export interface PromoBannerProps {
     title: string;
     subtitle: string;
-    image?: Image;
     className?: string;
     cta?: Link[];
 }
@@ -19,15 +18,25 @@ export interface PromoBanner extends PromoBannerProps {
 }
 
 const PromoBanner = (props: PromoBannerProps) => {
-    const { className = '', title, subtitle, image, cta } = props;
+    const { className = '', title, subtitle, cta } = props;
     const fieldPath = AnnotationsHelper.getFieldPath(props);
 
     return (
         <section className={`${styles['promo-banner']} ${className}`} {...AnnotationsHelper.setFieldPath(fieldPath)}>
             <Container className={styles['content']}>
                 <div>
-                    <h2 className={styles['title']}>{title}</h2>
-                    <p className={styles['subtitle']}>{subtitle}</p>
+                    <h2
+                        className={styles['title']}
+                        {...AnnotationsHelper.setFieldPath('.title')}
+                    >
+                        {title}
+                    </h2>
+                    <p
+                        className={styles['subtitle']}
+                        {...AnnotationsHelper.setFieldPath('.subtitle')}
+                    >
+                        {subtitle}
+                    </p>
                 </div>
                 {cta && cta.length > 0 && (
                     <div className={styles['cta-container']}>
