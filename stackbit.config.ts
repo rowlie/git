@@ -42,7 +42,7 @@ function getUrlByTypeFromSlug(type: string, slug: string): string {
     }
 
     if (type === 'blog-post') {
-        return `blog/${slug}`;
+        return `blog${slug}`;
     }
 
     return '';
