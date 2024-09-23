@@ -8,6 +8,7 @@ import { MarkdownSection } from './markdown-section';
 import { FAQsSection } from './faq-section';
 import { CardsSection } from './cards-section';
 import { TestimonialsSection} from './testimonials-section';
+import { SiteSettings } from './site-settings';
 
 import { SectionsPage } from './sections-page';
 import { BlogPost } from './blog-post';
@@ -24,4 +25,5 @@ export default [
     TestimonialsSection,
     SectionsPage,
     BlogPost,
+    SiteSettings,
 ];

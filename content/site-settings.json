@@ -1,15 +1,19 @@
 {
+    "type": "site-settings",
     "title": "ACME",
     "header": {
-        "title": "ACME",
-        "links": [{
-            "title": "Blog",
-            "url": "/blog"
-        }, {
-            "title": "Sign in",
-            "url": "/",
-            "variant": "outline"
-        }]
+        "links": [
+            {
+                "title": "Blog",
+                "url": "/blog",
+                "variant": "ghost"
+            },
+            {
+                "title": "Sign in",
+                "url": "/",
+                "variant": "outline"
+            }
+        ]
     },
     "footer": {
         "copyrightText": "Copyright © Netlify 2024."
