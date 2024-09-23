@@ -51,12 +51,12 @@ const TestimonialsSection = (props: TestimonialsSectionProps) => {
                                 <CardContent className='p-6'>
                                     <blockquote className='text-lg mb-4' {...AnnotationsHelper.setFieldPath('.quote')}>'{testimonial.quote}'</blockquote>
                                     {testimonial.author && (
-                                        <div className='flex items-center'>
-                                            <Avatar className='h-12 w-12 mr-4' {...AnnotationsHelper.setFieldPath('.author')}>
+                                        <div className='flex items-center' {...AnnotationsHelper.setFieldPath('.author')}>
+                                            <Avatar className='h-12 w-12 mr-4'>
                                                 <AvatarImage src={testimonial.author.image?.url} alt={testimonial.author.name} />
                                                 <AvatarFallback>{testimonial.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                             </Avatar>
-                                            <div {...AnnotationsHelper.setFieldPath('.author')}>
+                                            <div>
                                                 <cite className='font-semibold not-italic'>{testimonial.author.name}</cite>
                                                 {testimonial.author.title && (
                                                     <p className='text-sm text-muted-foreground'>{testimonial.author.title}</p>
