@@ -18,5 +18,5 @@
     "footer": {
         "copyrightText": "Copyright © Netlify 2024."
     },
-    "theme": "content/themes/slate.json"
+    "theme": "content/themes/zinc-dark.json"
 }
