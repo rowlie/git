@@ -31,7 +31,17 @@ export default defineStackbitConfig({
                 document: page,
             } as SiteMapDocumentEntry;
         }).filter((entry) => entry.urlPath.length > 0);
-    }
+    },
+    sidebarButtons: [
+        {
+            type: 'model',
+            icon: 'settings',
+            label: 'Settings',
+            modelName: 'site-settings',
+            srcType: 'fs',
+            srcProjectId: ''
+        },
+    ]
 });
 
 function getUrlByTypeFromSlug(type: string, slug: string): string {
