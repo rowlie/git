@@ -1,6 +1,6 @@
-import { resolve } from 'path';
 import { defineStackbitConfig, DocumentStringLikeFieldNonLocalized, SiteMapDocumentEntry } from '@stackbit/types';
 import { FileSystemContentSource } from '@stackbit/cms-git';
+import { BLOG_POST, SECTIONS_PAGE } from '@/components/';
 
 import Models from './content/models';
 
@@ -10,7 +10,7 @@ export default defineStackbitConfig({
     contentSources: [
         new FileSystemContentSource({
             contentDirs: ['content'],
-            rootPath: resolve(__dirname),
+            rootPath: __dirname,
             models: Models,
             assetsConfig: {
                 referenceType: 'static',
@@ -34,14 +34,12 @@ export default defineStackbitConfig({
     }
 });
 
-
-
 function getUrlByTypeFromSlug(type: string, slug: string): string {
-    if (type === 'sections-page') {
+    if (type === SECTIONS_PAGE) {
         return slug;
     }
 
-    if (type === 'blog-post') {
+    if (type === BLOG_POST) {
         return `blog${slug}`;
     }
 

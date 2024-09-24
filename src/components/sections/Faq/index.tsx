@@ -6,6 +6,7 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion';
 import * as AnnotationsHelper from '@/lib/annotations';
+
 import styles from './style.module.css';
 
 export interface Faq {

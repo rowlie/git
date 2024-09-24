@@ -1,6 +1,7 @@
 import { PageModel } from '@stackbit/types';
 
 export const BlogPost: PageModel = {
+    type: 'page',
     name: 'blog-post',
     label: 'Blog Post',
     filePath({ data }) {
@@ -12,7 +13,6 @@ export const BlogPost: PageModel = {
 
         return Promise.resolve(`content/posts${slug}.json`);
     },
-    type: 'page',
     fields: [{
         type: 'string',
         name: 'title',

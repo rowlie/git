@@ -36,12 +36,14 @@ const TestimonialsSection = (props: TestimonialsSectionProps) => {
                 >
                     {title}
                 </h2>
-                <p
-                    className={styles['subtitle']}
-                    {...AnnotationsHelper.setFieldPath('.subtitle')}
-                >
-                    {subtitle}
-                </p>
+                {subtitle && (
+                    <p
+                        className={styles['subtitle']}
+                        {...AnnotationsHelper.setFieldPath('.subtitle')}
+                    >
+                        {subtitle}
+                    </p>
+                )}
                 {testimonials && testimonials.length > 0 && (
                     <div className={styles['testimonials-container']}>
                         {testimonials.map((testimonial, index) => (
