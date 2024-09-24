@@ -27,8 +27,11 @@ export const BlogPost: PageModel = {
         name: 'image',
         label: 'Image',
         models: ['Image'],
-    },
-    {
+    },{
+        type: 'string',
+        name: 'excerpt',
+        label: 'Excerpt',
+    },{
         type: 'markdown',
         name: 'content',
         label: 'Content',
