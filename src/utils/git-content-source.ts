@@ -4,7 +4,7 @@ import { BLOG_POST, SECTIONS_PAGE } from '@/components';
 
 import { type SectionsPageLayoutProps } from '@/components/layouts/SectionsPageLayout';
 import { type BlogPostLayoutProps } from '@/components/layouts/BlogPostLayout';
-import type { SiteSettings, Author } from '@/components/types';
+import type { SiteSettings, Author, Theme } from '@/components/types';
 
 type DocumentWithId<T> = T & { _id: string };
 
@@ -14,6 +14,7 @@ const path = resolve(`@/../${CONTENT_PATH}`);
 let blogPosts: DocumentWithId<BlogPostLayoutProps>[] = [];
 let pages: DocumentWithId<SectionsPageLayoutProps>[] = [];
 let authors: DocumentWithId<Author>[] = [];
+let themes: DocumentWithId<Theme>[] = [];
 
 loadData();
 
@@ -25,6 +26,7 @@ watch(path, {
 
 function loadData() {
     authors = readDirectory('authors');
+    themes = readDirectory('themes');
     pages = readDirectory('pages').map(resolveSectionsPage);
     blogPosts = readDirectory('posts').map(resolveBlog);
 }
@@ -69,7 +71,12 @@ function readJsonFile(path: string) {
 }
 
 export async function getSiteSettings(): Promise<SiteSettings> {
-    return readJsonFile(`${path}/site-settings.json`);
+    const siteSettings = readJsonFile(`${path}/site-settings.json`);
+
+    return {
+        ...siteSettings,
+        theme: themes.find((theme) => theme._id === siteSettings.theme)!,
+    };
 }
 
 export function getPageBySlug(type: string, slug: string): SectionsPageLayoutProps | BlogPostLayoutProps | null {
