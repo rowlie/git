@@ -41,7 +41,7 @@ export const BlogPost: PageModel = {
         label: 'Authors',
         items: {
             type: 'reference',
-            models: ['Author']
+            models: ['author']
         },
     }],
     hideContent: true,

@@ -3,7 +3,8 @@ import { DataModel } from '@stackbit/types';
 
 export const Author: DataModel = {
     type: 'data',
-    name: 'Author',
+    name: 'author',
+    label: 'Author',
     labelField: 'name',
     filePath({ data }) {
         const { name } = data;

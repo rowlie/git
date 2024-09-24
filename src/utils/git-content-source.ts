@@ -29,7 +29,7 @@ function loadData() {
     blogPosts = readDirectory('posts').map(resolveBlog);
 }
 
-function readDirectory(directory: string) {
+function readDirectory(directory: string): DocumentWithId<any>[] {
     return readdirSync(`${path}/${directory}`).map((file) => {
         return {
             ...readJsonFile(`${path}/${directory}/${file}`),
@@ -49,19 +49,19 @@ function resolveSectionsPage(page: SectionsPageLayoutProps) {
                         ...testimonial,
                         author: authors.find((authorData) => authorData._id === (testimonial.author as unknown as string))!
                     }))
-                }
+                };
             }
 
-            return section
-        })
-    }
+            return section;
+        }),
+    };
 }
 
 function resolveBlog(post: any) {
     return {
         ...post,
         authors: post.authors?.map((author: string) => authors.find((authorData) => authorData._id === author)).filter(Boolean),
-    }
+    };
 }
 
 function readJsonFile(path: string) {

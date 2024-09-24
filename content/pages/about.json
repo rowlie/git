@@ -16,7 +16,8 @@
                     "url": "/about",
                     "variant": "default"
                 }
-            ]
+            ],
+            "className": ""
         },
         {
             "type": "hero-section",
