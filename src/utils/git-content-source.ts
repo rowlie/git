@@ -6,12 +6,14 @@ import { type SectionsPageLayoutProps } from '@/components/layouts/SectionsPageL
 import { type BlogPostLayoutProps } from '@/components/layouts/BlogPostLayout';
 import type { SiteSettings, Author } from '@/components/common/types';
 
+type DocumentWithId<T> = T & { _id: string };
+
 const CONTENT_PATH = 'content/';
 const path = resolve(`@/../${CONTENT_PATH}`);
 
-let blogPosts: (BlogPostLayoutProps & { _id: string })[] = [];
-let pages: (SectionsPageLayoutProps & { _id: string })[] = [];
-let authors: (Author & { _id: string })[] = [];
+let blogPosts: DocumentWithId<BlogPostLayoutProps>[] = [];
+let pages: DocumentWithId<SectionsPageLayoutProps>[] = [];
+let authors: DocumentWithId<Author>[] = [];
 
 loadData();
 
