@@ -1,7 +1,7 @@
 import { getComponentBySectionType } from "@/components/"
 import * as AnnotationsHelper from "@/lib/annotations";
 
-import { type Section, PageCommonProps } from '@/components/common/types';
+import { type Section, PageCommonProps } from '@/components/types';
 
 export type SectionsPageLayoutProps = PageCommonProps & {
     sections: Section[];

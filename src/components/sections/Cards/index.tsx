@@ -5,7 +5,7 @@ import Link from '@/components/common/Link';
 
 import * as AnnotationsHelper from '@/lib/annotations';
 
-import { Image, Link as LinkType } from '@/components/common/types';
+import { Image, Link as LinkType } from '@/components/types';
 
 import styles from './style.module.css';
 

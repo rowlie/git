@@ -3,7 +3,7 @@ import Container from "@/components/common/Container";
 
 import * as AnnotationsHelper from "@/lib/annotations";
 import MarkdownSection from '@/components/sections/Markdown';
-import { type Image, PageCommonProps, Author } from '@/components/common/types';
+import { type Image, PageCommonProps, Author } from '@/components/types';
 
 import styles from './blog-post.module.css';
 

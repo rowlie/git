@@ -4,7 +4,7 @@ import { BLOG_POST, SECTIONS_PAGE } from '@/components';
 
 import { type SectionsPageLayoutProps } from '@/components/layouts/SectionsPageLayout';
 import { type BlogPostLayoutProps } from '@/components/layouts/BlogPostLayout';
-import type { SiteSettings, Author } from '@/components/common/types';
+import type { SiteSettings, Author } from '@/components/types';
 
 type DocumentWithId<T> = T & { _id: string };
 

@@ -4,7 +4,7 @@ import * as AnnotationsHelper from "@/lib/annotations";
 
 import styles from './style.module.css';
 
-import type { Image, Link } from '@/components/common/types';
+import type { Image, Link } from '@/components/types';
 
 export interface HeroSectionProps {
     title: string;

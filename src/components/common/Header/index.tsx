@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from '@/components/common/Link';
 import Container from '@/components/common/Container';
 
-import { type Link as LinkType } from '../types';
+import { type Link as LinkType } from '../../types';
 
 import styles from './style.module.css';
 import Logo from './logo.svg'

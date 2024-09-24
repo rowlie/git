@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import { Button } from "@/components/ui/button"
 import * as AnnotationsHelper from "@/lib/annotations";
 
-import { type Link } from '../types';
+import { type Link } from '../../types';
 
 export type LinkProps = {
     href: string;
