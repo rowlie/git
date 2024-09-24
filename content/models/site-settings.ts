@@ -15,6 +15,13 @@ export const SiteSettings: DataModel = {
             label: 'Site Name',
         },
         {
+            type: 'reference',
+            name: 'theme',
+            label: 'Theme',
+            models: ['theme'],
+            required: true,
+        },
+        {
             type: 'object',
             name: 'header',
             label: 'Header',

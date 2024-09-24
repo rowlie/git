@@ -1,0 +1,23 @@
+{
+    "type": "theme",
+    "name": "Slate (Dark)",
+    "background": "#020817",
+    "foreground": "#f8fafc",
+    "card": "#020817",
+    "cardForeground": "#f8fafc",
+    "popover": "#020817",
+    "popoverForeground": "#f8fafc",
+    "primary": "#f8fafc",
+    "primaryForeground": "#0f172a",
+    "secondary": "#1e293b",
+    "secondaryForeground": "#f8fafc",
+    "muted": "#1e293b",
+    "mutedForeground": "#94a3b8",
+    "accent": "#1e293b",
+    "accentForeground": "#f8fafc",
+    "destructive": "#7f1d1d",
+    "destructiveForeground": "#f8fafc",
+    "border": "#1e293b",
+    "input": "#1e293b",
+    "radius": 8
+}
