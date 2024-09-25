@@ -12,6 +12,7 @@ const pageModelNames = [
 
 export default defineStackbitConfig({
     stackbitVersion: '0.6.0',
+    nodeVersion: '20',
     ssgName: 'nextjs',
     contentSources: [
         new FileSystemContentSource({
