@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, watch } from 'fs';
+import { readFileSync, readdirSync, watch, existsSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 import { BLOG_POST, SECTIONS_PAGE } from '@/components';
 
@@ -65,6 +65,10 @@ function loadData() {
 }
 
 function readDirectory(directory: string): DocumentWithId<any>[] {
+    if (!existsSync(`${path}/${directory}`)){
+        mkdirSync(`${path}/${directory}`);
+    }
+
     return readdirSync(`${path}/${directory}`).map((file) => {
         return {
             ...readJsonFile(`${path}/${directory}/${file}`),
