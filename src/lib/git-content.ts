@@ -6,6 +6,8 @@ import { type SectionsPageLayoutProps } from '@/components/layouts/SectionsPageL
 import { type BlogPostLayoutProps } from '@/components/layouts/BlogPostLayout';
 import type { SiteSettings, Author, Theme } from '@/components/types';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 type DocumentWithId<T> = T & { _id: string };
 
 const CONTENT_PATH = 'content/';
@@ -19,7 +21,7 @@ let themes: DocumentWithId<Theme>[] = [];
 loadData();
 
 watch(path, {
-    recursive: true,
+    recursive: !isProduction,
     encoding: 'utf-8',
     persistent: true,
 }).addListener('change', loadData);
