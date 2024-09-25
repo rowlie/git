@@ -87,10 +87,11 @@ function convertBlogPost(post: Entry<any>): BlogPostLayoutProps {
 }
 
 function convertLink(link: Entry<any>): Link {
+    const { fields = {}} = link;
     return {
-        title: link.fields.title!.toString(),
-        url: link.fields.url!.toString(),
-        variant: link.fields.variant as Link['variant'] || 'default',
+        title: fields.title && fields.title.toString() || '',
+        url: fields.url && fields.url.toString() || '',
+        variant: fields.variant as Link['variant'] || 'default',
     };
 }
 
@@ -132,6 +133,7 @@ function convertTestimonial(testimonial: Entry<any>) {
 
 function convertSection(section: Entry<any>): Section {
     const { sys, fields } = section;
+
     if (sys.contentType.sys.id === 'hero-section') {
         return {
             type: 'hero-section',
