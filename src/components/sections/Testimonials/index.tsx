@@ -49,7 +49,7 @@ const TestimonialsSection = (props: TestimonialsSectionProps) => {
                         {testimonials.map((testimonial, index) => (
                             <Card key={index} className='bg-card' {...AnnotationsHelper.setFieldPath(`.testimonials.${index}`)}>
                                 <CardContent className='p-6'>
-                                    <blockquote className='text-lg mb-4' {...AnnotationsHelper.setFieldPath('.quote')}>'{testimonial.quote}'</blockquote>
+                                    <blockquote className='text-lg mb-4' {...AnnotationsHelper.setFieldPath('.quote')}>&apos;{testimonial.quote}&apos;</blockquote>
                                     {testimonial.author && (
                                         <div className='flex items-center' {...AnnotationsHelper.setFieldPath('.author')}>
                                             <Avatar className='h-12 w-12 mr-4'>
