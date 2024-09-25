@@ -70,7 +70,7 @@ function convertSectionsPage(page: Entry<any>): SectionsPageLayoutProps {
         _id: page.sys.id,
         title: page.fields.title!.toString(),
         slug: page.fields.slug!.toString(),
-        sections: (page.fields.sections as any[]).map(convertSection),
+        sections: (page.fields.sections as any[]).map(convertSection) as any,
     };
 }
 
