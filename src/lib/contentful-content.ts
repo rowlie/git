@@ -8,7 +8,7 @@ import type { HeroSection } from '@/components/sections/HeroSection';
 import type { MarkdownSection } from '@/components/sections/Markdown';
 import type { PromoBanner } from '@/components/sections/PromoBanner';
 import type { TestimonialsSection } from '@/components/sections/Testimonials';
-import type { Image, Link, Author } from '@/components/types';
+import type { Image, Link, Author, Section } from '@/components/types';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -70,7 +70,7 @@ function convertSectionsPage(page: Entry<any>): SectionsPageLayoutProps {
         _id: page.sys.id,
         title: page.fields.title!.toString(),
         slug: page.fields.slug!.toString(),
-        sections: (page.fields.sections as any[]).map(convertSection) as any,
+        sections: (page.fields.sections as any[]).map(convertSection),
     };
 }
 
@@ -130,7 +130,7 @@ function convertTestimonial(testimonial: Entry<any>) {
     };
 }
 
-function convertSection(section: Entry<any>) {
+function convertSection(section: Entry<any>): Section {
     const { sys, fields } = section;
     if (sys.contentType.sys.id === 'hero-section') {
         return {
@@ -183,10 +183,7 @@ function convertSection(section: Entry<any>) {
             type: 'markdown',
             content: fields.content as string,
         } satisfies MarkdownSection;
-    }
-
-    return {
-        type: sys.contentType.sys.id,
-        ...fields,
+    } else {
+        throw new Error(`Unknown section type: ${sys.contentType.sys.id}`);
     }
 }
