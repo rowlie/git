@@ -11,12 +11,12 @@ import TestimonialsSection from './sections/Testimonials';
 export const SECTIONS_PAGE = 'sections-page';
 export const BLOG_POST = 'blog-post';
 
-const pageLayoutMapping: Record<string, unknown> = {
+const pageLayoutMapping: Record<string, any> = {
     [SECTIONS_PAGE]: SectionsPageLayout,
     [BLOG_POST]: BlogPageLayout,
 }
 
-const sectionsMapping: Record<string, unknown> = {
+const sectionsMapping: Record<string, any> = {
     'hero-section': HeroSection,
     'promo-banner': PromoBanner,
     'markdown': MarkdownSection,
