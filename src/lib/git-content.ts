@@ -67,8 +67,12 @@ function loadData() {
 }
 
 function readDirectory(directory: string): DocumentWithId<any>[] {
-    if (!existsSync(`${path}/${directory}`)){
-        mkdirSync(`${path}/${directory}`);
+    if (!existsSync(`${path}/${directory}`)) {
+        if (!isProduction) {
+            mkdirSync(`${path}/${directory}`);
+        } else {
+            return [];
+        }
     }
 
     return readdirSync(`${path}/${directory}`).map((file) => {
