@@ -13,12 +13,13 @@ export interface CardProps {
     title: string
     description?: string
     image?: Image
-    link: LinkType
+    link?: LinkType
 }
 
 export interface CardsSectionProps {
     title?: string;
     subtitle?: string;
+    className?: string;
     cards: CardProps[];
 }
 
@@ -27,11 +28,11 @@ export interface CardsSection extends CardsSectionProps {
 }
 
 export default function CardsSection(props: CardsSectionProps) {
-    const { title, subtitle, cards } = props;
+    const {className = '', title, subtitle, cards } = props;
     const fieldPath = AnnotationsHelper.getFieldPath(props);
 
     return (
-        <section className={styles['cards-section']} {...AnnotationsHelper.setFieldPath(fieldPath)}>
+        <section className={`${styles['cards-section']} ${className}`} {...AnnotationsHelper.setFieldPath(fieldPath)}>
             <Container>
                 <div>
                     {title && (

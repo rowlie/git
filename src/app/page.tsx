@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getLayoutByPageType, SECTIONS_PAGE } from '@/components/';
-import { getPageBySlug } from '@/utils/content';
+import { getPageBySlug } from '@/lib/content';
 
 export default async function Home() {
   const Layout = getLayoutByPageType(SECTIONS_PAGE);

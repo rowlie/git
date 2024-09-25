@@ -1,4 +1,4 @@
-import slugify from '@/utils/slugify';
+import slugify from '@/lib/slugify';
 import { DataModel } from '@stackbit/types';
 
 export const Author: DataModel = {

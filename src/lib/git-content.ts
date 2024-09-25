@@ -24,6 +24,39 @@ watch(path, {
     persistent: true,
 }).addListener('change', loadData);
 
+export async function getSiteSettings(): Promise<SiteSettings> {
+    const siteSettings = readJsonFile(`${path}/site-settings.json`);
+
+    return {
+        ...siteSettings,
+        theme: themes.find((theme) => theme._id === siteSettings.theme)!,
+    };
+}
+
+export function getPageBySlug(type: string, slug: string): SectionsPageLayoutProps | BlogPostLayoutProps | null {
+    if (type === BLOG_POST) {
+        return blogPosts.find((post) => post.slug === slug) || null;
+    }
+
+    if (type === SECTIONS_PAGE) {
+        return pages.find((page) => page.slug === slug) as SectionsPageLayoutProps || null;
+    }
+
+    return null;
+}
+
+export function getPagesByType(type: string) {
+    if (type === BLOG_POST) {
+        return blogPosts;
+    }
+
+    if (type === SECTIONS_PAGE) {
+        return pages;
+    }
+
+    return null;
+}
+
 function loadData() {
     authors = readDirectory('authors');
     themes = readDirectory('themes');
@@ -68,37 +101,4 @@ function resolveBlog(post: any) {
 
 function readJsonFile(path: string) {
     return JSON.parse(readFileSync(path, 'utf-8'));
-}
-
-export async function getSiteSettings(): Promise<SiteSettings> {
-    const siteSettings = readJsonFile(`${path}/site-settings.json`);
-
-    return {
-        ...siteSettings,
-        theme: themes.find((theme) => theme._id === siteSettings.theme)!,
-    };
-}
-
-export function getPageBySlug(type: string, slug: string): SectionsPageLayoutProps | BlogPostLayoutProps | null {
-    if (type === BLOG_POST) {
-        return blogPosts.find((post) => post.slug === slug) || null;
-    }
-
-    if (type === SECTIONS_PAGE) {
-        return pages.find((page) => page.slug === slug) as SectionsPageLayoutProps || null;
-    }
-
-    return null;
-}
-
-export function getPagesByType(type: string) {
-    if (type === BLOG_POST) {
-        return blogPosts;
-    }
-
-    if (type === SECTIONS_PAGE) {
-        return pages;
-    }
-
-    return null;
 }

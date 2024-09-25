@@ -37,12 +37,14 @@ export const FAQsSection: ObjectModel = {
                     {
                         type: 'string',
                         name: 'question',
-                        label: 'Question'
+                        label: 'Question',
+                        required: true,
                     },
                     {
                         type: 'string',
                         name: 'answer',
-                        label: 'Answer'
+                        label: 'Answer',
+                        required: true,
                     },
                 ]
             },

@@ -1,6 +1,6 @@
 import Container from '@/components/common/Container';
 import CardsSection, { type CardProps } from '@/components/sections/Cards';
-import { getBlogPosts } from '@/utils/content';
+import { getBlogPosts } from '@/lib/content';
 
 import styles from './style.module.css';
 

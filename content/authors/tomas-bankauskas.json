@@ -1,9 +1,0 @@
-{
-    "type": "author",
-    "name": "Tomas Bankauskas",
-    "title": "Senior Software Engineer @ Netlify",
-    "image": {
-        "type": "Image",
-        "url": "/images/tomas.jpeg"
-    }
-}

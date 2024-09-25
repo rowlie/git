@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getLayoutByPageType, BLOG_POST } from '@/components/';
-import { getPageBySlug } from '@/utils/content';
+import { getPageBySlug } from '@/lib/content';
 
 import { type Metadata } from 'next';
 

@@ -1,7 +1,7 @@
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 
-import { getSiteSettings } from '@/utils/content';
+import { getSiteSettings } from '@/lib/content';
 
 import { hexToHSL } from '@/lib/colors';
 
