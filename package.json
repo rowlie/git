@@ -25,8 +25,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@stackbit/cms-contentful": "^1.0.12",
-    "@stackbit/cms-git": "^1.0.12",
+    "@stackbit/cms-contentful": "^1.0.10",
+    "@stackbit/cms-git": "^1.0.10",
     "@stackbit/types": "^2.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
